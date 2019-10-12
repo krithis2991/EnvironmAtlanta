@@ -18,9 +18,7 @@ require("./routes/user-api-routes.js")(app);
 db.sequelize
   .sync({ force: true })
   .then(() =>
-    app.listen(process.env.PORT || 3000, () =>
-      console.log("Listening on port %s", PORT)
-    )
+    app.listen(PORT, () => console.log("Listening on port %s", PORT))
   );
 
 module.exports = app;
